@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST</title>
+    <link rel = "stylesheet" href = "style.css">
+    <style>
+        body{
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: black;
+        overflow: hidden;        }
+    </style>
+</head>
+<body>
+    <div class = "heart"></div>
+    <script type = "text/javaScript">
+        document.addEventListener('mousemove', function(e){
+            var body = document.querySelector('body');
+            var mouse = document.createElement("span");
+            var x = e.offsetX;
+            var y = e.offsetY;
+            mouse.style.left = x +'px';
+            mouse.style.top = y +'px';
+
+            var size = Math.random() * 80;
+            mouse.style.width = 20 + size+'px';
+            mouse.style.height = 20 + size+'px';
+
+            var transformValue = Math.random() * 360;
+            mouse.style.transform = 'rotate('+ transformValue + 'deg)';
+
+            body.appendChild(mouse);
+
+            setTimeout(function(){
+                mouse.remove();
+            },1000)
+        })
+    </script>
+</body>
+</html>
